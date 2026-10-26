@@ -1728,6 +1728,133 @@ img { background-color: var(--bg-soft-beige); }
 }
 .toast-action:hover { background: rgba(250, 246, 240, 0.18); }
 
+
+@media (max-width: 768px) {
+  .nav-mobile-only {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 6px;
+  }
+  .nav-mobile-only .btn { width: 100%; }
+  .schedule-box { padding: 22px 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .swap-in, .moments-grid.slide-next, .moments-grid.slide-prev, .toast-msg { animation: none; }
+}
+
+
+/* ==========================================================================
+   Dark Mode
+   ========================================================================== */
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-brown);
+  color: var(--text-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+.theme-toggle:hover { background: var(--btn-brown); border-color: var(--btn-brown); color: var(--text-white); }
+.theme-toggle .icon-sun { display: none; }
+html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+html[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+@media (max-width: 768px) {
+  .theme-toggle { margin-left: auto; margin-right: 8px; }
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-cream: #1B1612;
+  --bg-soft-beige: #241D17;
+  --bg-sage: #222B25;
+  --bg-taupe: #2A221B;
+  --bg-footer: #101612;
+
+  --text-heading: #F2E6D8;
+  --text-body: #D3C5B7;
+  --text-muted: #A39485;
+
+  --btn-brown: #B0653F;
+  --btn-brown-hover: #C47850;
+  --border-brown: #A98369;
+  --accent-green: #3F6B53;
+
+  --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .site-header,
+html[data-theme="dark"] .modal-dialog,
+html[data-theme="dark"] .schedule-box {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html[data-theme="dark"] .site-header {
+  background: rgba(27, 22, 18, 0.94);
+  border-bottom-color: rgba(169, 131, 105, 0.2);
+}
+html[data-theme="dark"] .hero-section {
+  background: linear-gradient(110deg, var(--bg-cream) 0%, #211A14 46%, #1B2822 100%);
+}
+html[data-theme="dark"] .services-section {
+  background: linear-gradient(180deg, #1F1913 0%, var(--bg-soft-beige) 100%);
+}
+html[data-theme="dark"] .hero-photo-frame::after { opacity: 0.35; }
+html[data-theme="dark"] .hero-badge-circle,
+html[data-theme="dark"] .services-photo-card,
+html[data-theme="dark"] .blob-photo-mask { border-color: var(--bg-cream); }
+
+html[data-theme="dark"] .slot-card { background: #2A221B; border-color: rgba(169, 131, 105, 0.28); }
+html[data-theme="dark"] .benefit-card { background: rgba(42, 34, 27, 0.6); border-color: rgba(169, 131, 105, 0.2); }
+html[data-theme="dark"] .benefit-card:hover,
+html[data-theme="dark"] .benefit-card.active { background: #2E251D; }
+html[data-theme="dark"] .form-control { background: #241D17; border-color: rgba(169, 131, 105, 0.4); }
+html[data-theme="dark"] .form-control::placeholder { color: var(--text-muted); }
+html[data-theme="dark"] .booking-item-card { background: #241D17; border-color: rgba(169, 131, 105, 0.28); }
+html[data-theme="dark"] .contact-card { background: #241D17; }
+html[data-theme="dark"] .carousel-dot { background-color: #4A3E33; }
+html[data-theme="dark"] .carousel-dot.active { background-color: var(--btn-brown); }
+html[data-theme="dark"] .carousel-btn { background-color: var(--bg-soft-beige); }
+html[data-theme="dark"] .modal-backdrop { background: rgba(8, 10, 9, 0.75); }
+html[data-theme="dark"] .modal-close { background: #2E251D; }
+html[data-theme="dark"] .benefit-icon { background-color: var(--bg-soft-beige); }
+html[data-theme="dark"] .meta-pill { background: var(--bg-soft-beige); }
+html[data-theme="dark"] .btn-copy-num:hover { background: rgba(169, 131, 105, 0.16); }
+html[data-theme="dark"] .contact-icon-circle.tiktok { background-color: #5A3A29; }
+html[data-theme="dark"] .toast-msg { background: #2E3F36; }
+
+html[data-theme="dark"] .slot-quota,
+html[data-theme="dark"] .status-chip.upcoming,
+html[data-theme="dark"] .slot-banner,
+html[data-theme="dark"] .schedule-toolbar { color: #B9D6C3; }
+html[data-theme="dark"] .slot-quota.low  { background: #4A3A18; color: #F0CF8A; }
+html[data-theme="dark"] .slot-quota.full { background: #4A2622; color: #F0A99F; }
+html[data-theme="dark"] .status-chip.past { background: #342B23; }
+html[data-theme="dark"] .field-error { color: #F0908A; }
+html[data-theme="dark"] .btn-danger-outline { border-color: #E07B7B; color: #E8918F; }
+html[data-theme="dark"] .btn-danger-outline:hover { background: #C94A4A; color: #FFF; }
+html[data-theme="dark"] .btn-link { color: #E0A27F; }
+html[data-theme="dark"] .day-filter-btn { border-color: rgba(169, 131, 105, 0.4); }
+html[data-theme="dark"] .lightbox-nav { background: rgba(27, 22, 18, 0.9); color: var(--text-heading); }
+
+/* Garis dekoratif SVG (daun, siluet) tetap terlihat di latar gelap */
+html[data-theme="dark"] svg [stroke="#683B28"],
+html[data-theme="dark"] svg [stroke="#8B6B58"] { stroke: #A98369; }
+html[data-theme="dark"] .hero-leaf-left,
+html[data-theme="dark"] .services-leaf-decor,
+html[data-theme="dark"] .about-leaf-decor,
+html[data-theme="dark"] .contact-leaf-left,
+html[data-theme="dark"] .benefits-silhouette { opacity: 0.5; }
+
 /* Back to top */
 .back-to-top {
   position: fixed;
@@ -1744,23 +1871,8 @@ img { background-color: var(--bg-soft-beige); }
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
 }
 .back-to-top.show { opacity: 1; visibility: visible; transform: none; }
 .back-to-top:hover { background: var(--btn-brown-hover); }
-
-@media (max-width: 768px) {
-  .nav-mobile-only {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 6px;
-  }
-  .nav-mobile-only .btn { width: 100%; }
-  .schedule-box { padding: 22px 18px; }
-  .back-to-top { left: 14px; bottom: 14px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .swap-in, .moments-grid.slide-next, .moments-grid.slide-prev, .toast-msg { animation: none; }
-}
+@media (max-width: 768px) { .back-to-top { left: 14px; bottom: 14px; } }
